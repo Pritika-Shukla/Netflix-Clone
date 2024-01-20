@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.btn{
+    padding:0.5rem 1rem ;
+    background-color: #e50914;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    font-weight: bolder;
+    font-size: 1.05rem;
+    color: white;
+    margin-left:12px ;
+}
+.logo img{
+    
+height: 5rem;
+}
+.inp{
+    padding: 18px;
+    width: 19rem;
+    border: none;
+  background-color: rgba(0,0,0,0.5);
+  border:1px solid white ;
+}

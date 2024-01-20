@@ -1,0 +1,38 @@
+.containerStyle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+   background-color: rgba(0,0,0,0.5);
+   height:100vh;
+   width:100vw;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-right: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+.text h1{
+ font-size: 2.5rem;
+ font-weight: 900;
+ font-family: sans-serif;
+}
+.text h4,h6{
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 500;
+    margin: 18px;
+}
+.text, .form{
+    text-align: center;
+}
