@@ -22,9 +22,11 @@ body::-webkit-scrollbar{
 height: 5rem;
 }
 .inp{
+    color: white;
     padding: 18px;
     width: 19rem;
     border: none;
   background-color: rgba(0,0,0,0.5);
   border:1px solid white ;
+  margin-right: 18px;
 }
