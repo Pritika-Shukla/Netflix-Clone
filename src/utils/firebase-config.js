@@ -1,17 +1,17 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth";
-import { getAnalytics } from "firebase/analytics"; 
+import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyADjMyPinNuleFmHaygqUIPp6V5wQZIP-I",
-  authDomain: "react-netflix-clone-bf5ae.firebaseapp.com",
-  projectId: "react-netflix-clone-bf5ae",
-  storageBucket: "react-netflix-clone-bf5ae.appspot.com",
-  messagingSenderId: "1097790547875",
-  appId: "1:1097790547875:web:012cae8dc8bbb8630b9c16",
-  measurementId: "G-JN8B2Q5JEC"
+  apiKey: "AIzaSyDE3DpKp8ZQGBdw4lW3aB5tkpluUvaFV8s",
+  authDomain: "netflix-clone-1bde3.firebaseapp.com",
+  projectId: "netflix-clone-1bde3",
+  storageBucket: "netflix-clone-1bde3.appspot.com",
+  messagingSenderId: "249620981374",
+  appId: "1:249620981374:web:f5bd6918a09d82c02ada2f",
+  measurementId: "G-2F972VKY4N"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-export const firebaseAuth=getAuth(app);
+
+export const firebaseAuth =getAuth(app);

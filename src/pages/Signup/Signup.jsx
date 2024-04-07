@@ -1,22 +1,28 @@
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Backgroundimage from "../../components/Backgroundimage";
 import "./Signup.css";
 import Header from "../../components/Header";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { firebaseAuth } from "../../utils/firebase-config";
 export default function Signup() {
-  const [formValues, setformValues] = useState({
+  const [formValues, setFormValues] = useState({
     email: "",
+    password: "",
   });
-  const handleSignIn=async()=>{
-  try{
-const{email}=formValues;const password = prompt('Enter your password:');
-
-await createUserWithEmailAndPassword(firebaseAuth,email,password);
-  }catch(err){
-console.log(err);
-  }
+  const navigate = useNavigate();
+  const handleSignIn = async () => {
+    try {
+      const {email,password}=formValues
+       await createUserWithEmailAndPassword(firebaseAuth,email,password);
+    } catch (err) {
+      console.log(err);
+    }
   };
+  onAuthStateChanged(firebaseAuth,(currentUser)=>{
+    if(currentUser) navigate("/"); 
+  })
   return (
     <>
       <Backgroundimage />
@@ -39,15 +45,36 @@ console.log(err);
             className="inp"
             value={formValues.email}
             onChange={(e) =>
-              setformValues({ ...formValues, [e.target.name]: e.target.value, })
+              setFormValues({
+                ...formValues,
+                [e.target.name]: e.target.value,
+              })
             }
           />
-          <input type="password" name="password" placeholder="Password" className="inp" />
-          <button className="btn" style={{ padding: "1.1rem" }} onClick={handleSignIn}>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            className="inp"
+            value={formValues.password}
+            onChange={(e) =>
+              setFormValues({
+                ...formValues,
+                [e.target.name]: e.target.value,
+              })
+            }
+          />
+          {/* <button className="btn" style={{ padding: "1.1rem" }}>
             Get Started
-          </button>
+          </button> */}
         </div>
-        <button className="btn" style={{marginTop:'18px'}}>Sign In</button>
+        <button
+          className="btn"
+          style={{ marginTop: "18px" }}
+          onClick={handleSignIn}
+        >
+          Sign In
+        </button>
       </div>
     </>
   );

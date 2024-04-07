@@ -6,7 +6,7 @@ const containerStyle = {
   height: '100vh',
   overflow:'hidden',
   top:0,
- left:0,
+  left:0,
 };
 const imageStyle = {
   width: '100%',
