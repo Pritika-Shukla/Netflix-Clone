@@ -3,6 +3,7 @@ body{
     padding: 0;
     background-color: black;
     
+    
 }
 body::-webkit-scrollbar{
     display: none;
@@ -19,7 +20,7 @@ body::-webkit-scrollbar{
     margin-left:12px ;
 }
 .logo img{
-    
+  
 height: 5rem;
 }
 .inp{
