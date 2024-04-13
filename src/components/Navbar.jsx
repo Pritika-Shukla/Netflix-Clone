@@ -29,17 +29,7 @@ function Navbar({ isScrolled }) {
             </li>
           ))}
         </ul>
-        <div className={`search${showSearch ? "show-search" : ""}`}>
-          <button
-            onFocus={() => setShowSearch(true)}
-            onBlur={() => {
-              if (!inputHover) {
-                setShowSearch(false);
-              }
-            }}
-          >
-            <FaSearch />
-          </button>
+        <div className={`search${showSearch ? " show-search" : ""}`}>
           <input
             type="text"
             placeholder="Search"
@@ -50,6 +40,16 @@ function Navbar({ isScrolled }) {
               setInputHover(false);
             }}
           />
+          <button
+            onFocus={() => setShowSearch(true)}
+            onBlur={() => {
+              if (!inputHover) {
+                setShowSearch(false);
+              }
+            }}
+          >
+            <FaSearch />
+          </button>
         </div>
         <button onClick={() => signOut(firebaseAuth)} className="sign">
           <FaPowerOff />
@@ -61,14 +61,13 @@ function Navbar({ isScrolled }) {
 
 export default Navbar;
 
-
 // Define the Container styled-component
 const Container = styled.div`
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .5rem;
+    padding: 0 1rem;
   }
 
   .logo img {
@@ -81,19 +80,41 @@ const Container = styled.div`
     background-color: transparent;
     border: none;
     cursor: pointer;
-    margin-right:1rem;
   }
-
-  .logo {
-    height: 29px;
-    width: 12px;
-  }
-
+button{
+  background-color: transparent;
+  color:white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
   .list {
     list-style-type: none;
     display: flex;
+    align-items: center;
     gap: 2rem;
-    margin-top:2rem;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Pushes the search box and input area to the right */
+  }
+
+  .search button {
+    margin-right: 0.5rem; /* Adjust the margin between button and input */
+  }
+  input{
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+    background-color: transparent;
+    border: none;
+    color: white;
+    &:focus {
+      outline: none;
+    }
+  }
+    margin-right: 18px;
   }
 
   li {
@@ -101,6 +122,16 @@ const Container = styled.div`
       color: white;
       text-decoration: none;
       font-size: 1.2rem;
+    }
+  }
+  .show-search {
+    border: 1px solid white;
+    input {
+      width: 100%;
+      opacity: 1;
+      visibility: visible;
+      padding: 0.3rem;
+      outline:none;
     }
   }
 `;

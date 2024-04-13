@@ -32,3 +32,24 @@ height: 5rem;
   border:1px solid white ;
   margin-right: 18px;
 }
+
+.j-center {
+    justify-content: center;
+  }
+  
+  .a-center {
+    align-items: center;
+  }
+
+  
+.flex {
+    display: flex;
+  }
+  
+  .column {
+    flex-direction: column;
+  }
+  
+  .j-between {
+    justify-content: space-between;
+  }
