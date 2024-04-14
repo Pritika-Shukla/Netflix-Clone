@@ -63,11 +63,19 @@ export default Navbar;
 
 // Define the Container styled-component
 const Container = styled.div`
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+BACKGROUND-COLOR:BLACK;
+opacity:.9;
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
+   height:5rem;
   }
 
   .logo img {

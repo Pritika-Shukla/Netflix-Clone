@@ -35,6 +35,7 @@ export default function Login() {
         <Header Signin />
       </div>
       <div className="containerStyle">
+      <h1>Login</h1>
         <div className="form">
           <input
             type="email"
