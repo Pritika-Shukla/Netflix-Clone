@@ -6,6 +6,8 @@ import { FaPlay } from 'react-icons/fa';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import styled from 'styled-components';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
+import { firebaseAuth } from '../../utils/firebase-config';
 export default function Netflix() {
 const[isScrolled,setIsScrolled]=useState(false);
 const navigate = useNavigate();
@@ -14,6 +16,9 @@ window.onscroll= () =>{
     setIsScrolled(window.pageYOffset === 0 ? false:true);
     return () =>(window.onscroll=null);
 }
+onAuthStateChanged(firebaseAuth, (currentUser) => {
+  if (!currentUser) navigate("/login");
+});
   return (
 <Container>
     <Navbar isScrolled={isScrolled}/>

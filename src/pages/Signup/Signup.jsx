@@ -5,6 +5,7 @@ import Backgroundimage from "../../components/Backgroundimage";
 import "./Signup.css";
 import Header from "../../components/Header";
 import { firebaseAuth } from "../../utils/firebase-config";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 export default function Signup() {
   const [formValues, setFormValues] = useState({
     email: "",

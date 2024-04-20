@@ -20,19 +20,11 @@ export default function Login() {
       console.log(error.code);
     }
   };
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
-      if (currentUser) navigate("/");
-    });
-    return () => unsubscribe();
-  }, [navigate]);
-
   return (
     <>
       <BackgroundImage />
       <div className="Header">
-        <Header Signin />
+      <Header/>
       </div>
       <div className="containerStyle">
       <h1>Login</h1>
@@ -69,6 +61,7 @@ export default function Login() {
             Login
           </button>
         </div>
+        {/* <p>Don't have an account?<a href="Signup" className="text-gray-400">SignUp</a></p> */}
       </div>
     </>
   );

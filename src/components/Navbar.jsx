@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FaPowerOff, FaSearch } from "react-icons/fa";
-import { signOut } from "firebase/auth";
 import { firebaseAuth } from "../utils/firebase-config";
-
 function Navbar({ isScrolled }) {
   const links = [
     { name: "Home", link: "/" },
@@ -13,6 +11,7 @@ function Navbar({ isScrolled }) {
     { name: "Tv Shows", link: "/tv" },
     { name: "My List", link: "/mylist" },
   ];
+
   const [showSearch, setShowSearch] = useState(false);
   const [inputHover, setInputHover] = useState(false);
 
